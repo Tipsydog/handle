@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>账户注册</title>
+	<style type="text/css">
+		body,
+		input {
+			margin: 0;
+			padding: 0;
+			background: #66cccc;
+		}
+
+		input {
+			display: inline-block;
+			background: #fff;
+		}
+
+		.xiao-container {
+			width: 100%;
+		}
+
+		.xiao-register-box {
+			position: relative;
+			height: 800px;
+			width: 1000px;
+			top: 50px;
+			margin: 0 auto;
+			z-index: 99999;
+			background: #ffffff;
+			border: 7px solid #ccc;
+		}
+
+		.xiao-title-box {
+			position: absolute;
+			width: 300px;
+			height: 50px;
+			margin-left: 350px;
+			margin-top: 5px;
+			text-align: center;
+			font-size: 28px;
+			font-weight: 800;
+			color: #ee5000;
+			line-height: 50px;
+		}
+
+		.xiao-username-box {
+			position: absolute;
+			width: 1000px;
+			height: 40px;
+			line-height: 40px;
+			margin-top: 100px;
+			margin-left: 80px;
+			font-weight: 700;
+		}
+
+		.xiao-username-input {
+			display: inline-block;
+			margin-left: 45px;
+			/*background: green;*/
+		}
+
+		#username {
+			height: 35px;
+			width: 290px;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+		}
+
+		.xiao-userPassword-box {
+			position: absolute;
+			width: 1000px;
+			height: 40px;
+			line-height: 40px;
+			margin-top: 180px;
+			margin-left: 80px;
+			font-weight: 700;
+		}
+
+		.xiao-userPassword-input {
+			display: inline-block;
+			margin-left: 61px;
+		}
+
+		#password1 {
+			height: 35px;
+			width: 290px;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+		}
+
+		.xiao-userRePassword-box {
+			position: absolute;
+			width: 1000px;
+			height: 40px;
+			line-height: 40px;
+			margin-top: 260px;
+			margin-left: 80px;
+			font-weight: 700;
+		}
+
+		.xiao-userRePassword-input {
+			display: inline-block;
+			margin-left: 28px;
+		}
+
+		#password2 {
+			height: 35px;
+			width: 290px;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+		}
+
+		.xiao-userPhone-box {
+			position: absolute;
+			width: 1000px;
+			height: 40px;
+			line-height: 40px;
+			margin-top: 340px;
+			margin-left: 80px;
+			font-weight: 700;
+		}
+
+		.xiao-userPhone-input {
+			display: inline-block;
+			margin-left: 28px;
+		}
+
+		#userPhone {
+			height: 35px;
+			width: 290px;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+		}
+
+		.xiao-userEmail-box {
+			position: absolute;
+			width: 1000px;
+			height: 40px;
+			line-height: 40px;
+			margin-top: 420px;
+			margin-left: 80px;
+			font-weight: 700;
+		}
+
+		.xiao-userEmail-input {
+			display: inline-block;
+			margin-left: 28px;
+		}
+
+		#userEmail {
+			height: 35px;
+			width: 290px;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+		}
+
+		.xiao-userGender-box {
+			position: absolute;
+			width: 420px;
+			height: 40px;
+			line-height: 40px;
+			margin-top: 500px;
+			margin-left: 82px;
+			font-weight: 700;
+		}
+
+		.xiao-userGender-input {
+			display: inline-block;
+			margin-left: 62px;
+		}
+
+		.xiao-require {
+			color: red;
+		}
+
+		.xiao-userId-box {
+			position: absolute;
+			width: 1000px;
+			height: 40px;
+			line-height: 40px;
+			margin-top: 580px;
+			margin-left: 80px;
+			font-weight: 700;
+		}
+
+		.xiao-userId-input {
+			display: inline-block;
+			margin-left: 45px;
+		}
+
+		#userId {
+			height: 35px;
+			width: 290px;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+		}
+
+		.xiao-accessory-box {
+			position: absolute;
+			width: 1000px;
+			height: 40px;
+			line-height: 40px;
+			margin-top: 660px;
+			margin-left: 80px;
+			font-weight: 700;
+		}
+
+		.xiao-accessory-input {
+			display: inline-block;
+			margin-left: 61px;
+		}
+
+		#accessory {
+			height: 35px;
+			width: 290px;
+			border: hidden;
+			border-radius: 5px;
+		}
+
+
+		.xiao-submit-box {
+			position: absolute;
+			width: 80px;
+			height: 40px;
+			line-height: 40px;
+			margin-top: 720px;
+			margin-left: 200px;
+			border-radius: 5px;
+			background: grey;
+		}
+
+		#xiao-submit-button {
+			display: inline-block;
+			width: 80px;
+			height: 40px;
+			border-radius: 5px;
+			background: #ee7700;
+		}
+
+		.xiao-goLogin-box {
+			position: absolute;
+			width: 150px;
+			height: 20px;
+			margin-top: 740px;
+			margin-left: 320px;
+
+		}
+	</style>
+
+	<script type="text/javascript">
+		function change_style(obj1, obj2, obj3) {
+			obj1.style.color = '#D60A0A';
+			obj2.style.color = '#D60A0A';
+			obj3.style.border = "1px solid red";
+		}
+		function restore_style(obj1, obj2, obj3) {
+			obj1.style.color = '#595959';
+			obj2.style.color = '#595959';
+			obj3.style.border = "1px solid #595959";
+		}
+
+		function check_us() {
+			var reg = /^[A-Za-z_0-9]+$/;
+			var us = document.getElementById("us");
+			var user_span = document.getElementById("user-span");
+			var us_name = document.getElementById("username");
+			var user_name = us_name.value;
+			if (user_name == " " || user_name.length < 6 || user_name.length > 16 || !reg.test(user_name)) {
+				change_style(us, user_span, us_name);
+				return false;
+			}
+			restore_style(us, user_span, us_name);
+			return true;;
+		}
+
+		function check_password() {
+			var pa = document.getElementById("pa");
+			var pass_span1 = document.getElementById("pass-span1");
+			var pass1 = document.getElementById("password1");
+			var password1 = pass1.value;
+			if (password1 == " " || password1.length < 6 || password1.length > 16) {
+				change_style(pa, pass_span1, pass1);
+				return false;
+			}
+			restore_style(pa, pass_span1, pass1);
+			return true;
+		}
+		function check_repassword() {
+			var repa = document.getElementById("repa");
+			var pass_span2 = document.getElementById("pass-span2");
+			var pass1 = document.getElementById("password1");
+			var pass2 = document.getElementById("password2");
+			var password1 = pass1.value;
+			var password2 = pass2.value;
+			if (password2 == " ") {
+				pass_span2.innerHTML = "* 请再次输入密码";
+				change_style(repa, pass_span2, pass2);
+				return false;
+			}
+			if (password1 != password2) {
+				pass_span2.innerHTML = "* 第二次输入的密码与第一次输入的密码不一致";
+				change_style(repa, pass_span2, pass2);
+				return false;
+			}
+			restore_style(repa, pass_span2, pass2);
+			pass_span2.innerHTML = " ";
+			return true;
+		}
+
+		function check_mphone() {
+			var mphone_span = document.getElementById("mphone-span");
+			var mp = document.getElementById("mp");
+			var m_phone = document.getElementById("userPhone");
+			var mphone = m_phone.value;
+			var reg = /(13|15|18|17)\d{9}$/;
+			if (mphone == "") {
+				change_style(mp, mphone_span, m_phone);
+				return false;
+			}
+			if (!reg.test(mphone)) {
+				mphone_span.innerHTML = "* 输入的手机号错误";
+				change_style(mp, mphone_span, m_phone);
+				return false;
+			}
+			mphone_span.innerHTML = "* 请输入正确的手机号码";
+			restore_style(mp, mphone_span, m_phone);
+			return true;
+		}
+		function check_email() {
+			var email_span = document.getElementById("email-span");
+			var em = document.getElementById("em");
+			var e_mail = document.getElementById("userEmail");
+			var email = e_mail.value;
+			var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+			if (email.length == 0) {
+				change_style(em, email_span, e_mail);
+				return false;
+			}
+			if (!reg.test(email)) {
+				email_span.innerHTML = "* 邮箱格式不正确";
+				change_style(em, email_span, e_mail);
+				return false;
+			}
+			email_span.innerHTML = "* 邮箱将与支付及优惠相关，请填写正确的邮箱";
+			restore_style(em, email_span, e_mail);
+			return true;
+		}
+		function check_id() {
+			var id_span = document.getElementById("id-span");
+			var id = document.getElementById("id1");
+			var user_Id = document.getElementById("userId");
+			var mphone = user_Id.value;
+			var reg = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+			if (mphone == "") {
+				change_style(id, id_span, user_Id);
+				return false;
+			}
+			if (!reg.test(mphone)) {
+				id_span.innerHTML = "* 输入的身份证号错误";
+				change_style(id, id_span, user_Id);
+				return false;
+			}
+			id_span.innerHTML = "* 请输入正确的身份证";
+			restore_style(id, id_span, user_Id);
+			return true;
+		}
+
+		function check_acc() {
+			var acc = document.getElementById("acc");
+			var acc_span = document.getElementById("acc-span");
+			var accessory_name = document.getElementById("accessory");
+			var acc_name = accessory_name.value;
+			var arr = ["jpg", "pdf", "rar", "zip", "doc", "docx"];
+			var index = acc_name.lastIndexOf(".");
+			var ext = acc_name.substr(index + 1);
+			var flag = false;
+
+			for (var i = 0; i < arr.length; i++) {
+				if (ext == arr[i]) {
+					flag = true; //一旦找到合适的，立即退出循环
+					break;
+				}
+			}
+			//条件判断
+			if (flag) {
+				acc_span.innerHTML = "* 附件添加成功";
+				restore_style(acc, acc_span, accessory_name);
+				return true;
+			} else {
+				acc_span.innerHTML = "* 请上传后缀为“jpg,pdf,rar,zip,doc,docx”的文件 ";
+				change_style(acc, acc_span, accessory_name);
+				return false;
+			}
+		}
+
+		function check() {
+			if (check_us() && check_password() && check_repassword() && check_email() && check_mphone() && check_id()) {
+				return true;
+			}
+			else {
+				alert("亲！你还没完成注册呢！");
+				return false;
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+	<div class="xiao-container">
+		<div class="xiao-register-box">
+			<div class="xiao-title-box">
+				<span>用户注册</span>
+			</div>
+			<form action="#" method="post">
+				<div class="xiao-username-box">
+					<span class="xiao-require">*</span>
+					<label for="username" id="us">用户名</label>
+					<div class="xiao-username-input">
+						<input type="text" id="username" name="username" placeholder="请输入用户名 长度:6-12个字符"
+							onblur="check_us()" />
+						<span class="tips" id="user-span">* 长度为6~16位字符，可以为“数字/字母/中划线/下划线”组成</span>
+					</div>
+				</div>
+
+				<div class="xiao-userPassword-box">
+					<span class="xiao-require">*</span>
+					<label for="userPassword" id="pa">密码</label>
+					<div class="xiao-userPassword-input">
+						<input type="password" id="password1" name="userPassword" placeholder="请输入密码 长度:6-12个字符"
+							onblur="check_password()" />
+						<span class="tips" id="pass-span1">* 长度为6~16位字符</span>
+					</div>
+				</div>
+
+				<div class="xiao-userRePassword-box">
+					<span class="xiao-require">*</span>
+					<label for="userRePassword" id="repa">确认密码</label>
+					<div class="xiao-userRePassword-input">
+						<input type="password" id="password2" name="userRePassword" placeholder="请重复输入密码"
+							onblur="check_repassword()" />
+						<span class="tips" id="pass-span2"></span>
+					</div>
+				</div>
+
+				<div class="xiao-userPhone-box">
+					<span class="xiao-require">*</span>
+					<label for="userPhone" id="mp">手机号码</label>
+					<div class="xiao-userPhone-input">
+						<input type="text" id="userPhone" name="userPhone" placeholder="请输入您的手机号码，11位有效数字"
+							onblur="check_mphone() " />
+						<span class="tips" id="mphone-span">* 请输入正确的手机号码</span>
+					</div>
+				</div>
+
+				<div class="xiao-userEmail-box">
+					<span class="xiao-require">*</span>
+					<label for="userEmail" id="em">电子邮箱</label>
+					<div class="xiao-userEmail-input">
+						<input type="text" id="userEmail" name="userEmail" placeholder="请输入您的邮箱地址，如：123@qq.com"
+							onblur="check_email()" />
+						<span class="tips" id="email-span">* 邮箱将与支付及优惠相关，请填写正确的邮箱</span>
+					</div>
+				</div>
+
+				<div class="xiao-userGender-box">
+					<span class="xiao-require">*</span>
+					<label for="userGender">性别</label>
+					<div class="xiao-userGender-input">
+						<input type="radio" id="userGender_01" name="userGender" value="0" checked="checked" />男   
+						<input type="radio" id="userGender_02" name="userGender" value="1" />女
+					</div>
+				</div>
+
+				<div class="xiao-userId-box">
+					<span class="xiao-require">*</span>
+					<label for="userId" id="id1">身份证</label>
+					<div class="xiao-userId-input">
+						<input type="text" id="userId" name="userId" placeholder="请输入您身份证号" onblur="check_id()" />
+						<span class="tips" id="id-span">* 请填写正确的身份证号ß码</span>
+					</div>
+				</div>
+
+				<div class="xiao-accessory-box">
+					<span class="xiao-require">*</span>
+					<label for="accessory" id="acc">附件</label>
+					<div class="xiao-accessory-input">
+						<input type="file" id="accessory" name="accessory" onblur="check_acc()" />
+						<span class="tips" id="acc-span">* 请添加附件</span>
+					</div>
+				</div>
+
+				<div class="xiao-submit-box">
+					<input id="xiao-submit-button" type="submit" value="注册" onclick="check()">
+				</div>
+
+				<div class="xiao-goLogin-box">
+					<a href="#" style="text-decoration: none;">已有账号？去登录</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
